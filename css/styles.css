@@ -329,7 +329,7 @@ p {
 
 @media screen and (max-width:820px) {
     #before {
-        margin-top: 140px;
+        margin-top: 130px;
         }
 }
 
@@ -341,7 +341,7 @@ p {
 
 @media screen and (max-width:480px) {
     #before {
-        margin-top: 5rem;
+        margin-top: 60px;
         position: relative;
         top: 30px;
         width: 80%
