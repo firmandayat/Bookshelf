@@ -137,10 +137,16 @@ function removeTaskBooks(bookshelfID) {
 
   if (bookshelfTarget === -1) return;
 
-  books.splice(bookshelfTarget, 1);
+  const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+  modal.show();
 
-  document.dispatchEvent(new Event(RENDER_EVENT));
-  saveData();
+  const confirmButton = document.getElementById('confirmDeleteButton');
+  confirmButton.addEventListener('click', function() {
+    books.splice(bookshelfTarget, 1);
+    document.dispatchEvent(new Event(RENDER_EVENT));
+    saveData();
+    modal.hide();
+  });
 }
 
 function undoTaskBooks(bookshelfID) {
@@ -155,7 +161,6 @@ function undoTaskBooks(bookshelfID) {
 }
 
 function deleteBook(bookshelfID) {
-  alert("Deleted Successfully");
   for (const index in books) {
     if (books[index].id === bookshelfID) {
       return index;
