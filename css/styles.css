@@ -365,7 +365,7 @@ p {
 
 @media screen and (max-width:414px) {
     #before {
-            margin-top: 40px;
+            margin-top: 15px;
             position: relative;
             top: 130px;
         }
