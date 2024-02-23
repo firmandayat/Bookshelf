@@ -47,6 +47,10 @@ main {
     margin-top: 120px;
 }
 
+#confirmationModalLabel{
+    color: #dc3545;
+}
+
 .top{
     display: flex;
     width: 100%;
