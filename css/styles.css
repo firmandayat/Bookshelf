@@ -344,11 +344,21 @@ p {
         margin-top: 5rem;
         position: relative;
         top: 30px;
+        width: 80%
     }
 
     #after{
         position: relative;
         top: 30px;
+        width: 80%
+    }
+
+    .form{
+        max-width: 80%;
+    }
+
+    .search{
+        width: 80%;
     }
 
 }
