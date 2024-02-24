@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function addBookshelf() {
   const title = document.getElementById("bookTitle").value;
   const author = document.getElementById("bookAuthor").value;
-  const year = document.getElementById("bookYear").value;
+  const year = parseInt(document.getElementById("bookYear").value);
   const isComplete = document.getElementById("bookIsComplete").checked;
 
   const generatedID = generateId();
@@ -137,11 +137,13 @@ function removeTaskBooks(bookshelfID) {
 
   if (bookshelfTarget === -1) return;
 
-  const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+  const modal = new bootstrap.Modal(
+    document.getElementById("confirmationModal")
+  );
   modal.show();
 
-  const confirmButton = document.getElementById('confirmDeleteButton');
-  confirmButton.addEventListener('click', function() {
+  const confirmButton = document.getElementById("confirmDeleteButton");
+  confirmButton.addEventListener("click", function () {
     books.splice(bookshelfTarget, 1);
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveData();
