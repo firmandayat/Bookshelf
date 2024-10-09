@@ -66,15 +66,20 @@ document.addEventListener(RENDER_EVENT, function () {
 
 function makeBookshelf(bookshelfObject) {
   const title = document.createElement("h3");
+  title.setAttribute("data-testid", "bookItemTitle");
   title.innerText = bookshelfObject.title;
 
   const author = document.createElement("p");
+  author.setAttribute("data-testid", "bookItemAuthor");
   author.innerText = "Author : " + bookshelfObject.author;
 
   const year = document.createElement("p");
+  year.setAttribute("data-testid", "bookItemYear");
   year.innerText = "Year : " + bookshelfObject.year;
 
   const textContainer = document.createElement("div");
+  textContainer.setAttribute("data-bookid", `${bookshelfObject.id}`);
+  textContainer.setAttribute("data-testid", "bookItem");
   textContainer.append(title, author, year);
 
   const container = document.createElement("div");
@@ -82,7 +87,6 @@ function makeBookshelf(bookshelfObject) {
   container.classList.add("button");
 
   container.append(textContainer);
-  container.setAttribute("id", `bookshelft-${bookshelfObject.id}`);
 
   if (bookshelfObject.isComplete) {
     const undoBtn = document.createElement("button");
@@ -102,6 +106,7 @@ function makeBookshelf(bookshelfObject) {
     container.append(undoBtn, trashButton);
   } else {
     const checkButton = document.createElement("button");
+    checkButton.setAttribute("data-testid", "bookItemIsCompleteButton");
     checkButton.classList.add("completed-button");
 
     checkButton.addEventListener("click", function () {
@@ -109,6 +114,7 @@ function makeBookshelf(bookshelfObject) {
     });
 
     const trashButton = document.createElement("button");
+    trashButton.setAttribute("data-testid", "bookItemDeleteButton");
     trashButton.classList.add("delete-button");
 
     trashButton.addEventListener("click", function () {
