@@ -30,35 +30,35 @@
         <div class="top">
             <section class="form">
                 <h2>Insert Book</h2>
-                <form id="form">
+                <form id="form" data-testid="bookForm">
                     <div class="input">
                         <label>Title</label>
-                        <input class="textbox" id="bookTitle" type="text" required><br>
+                        <input class="textbox" id="bookTitle" type="text" required data-testid="bookFormTitleInput"><br>
                     </div>
                     <div class="input">
                         <label>Author</label>
-                        <input class="textbox" id="bookAuthor" type="text" required><br>
+                        <input class="textbox" id="bookAuthor" type="text" required data-testid="bookFormAuthorInput"><br>
                     </div>
                     <div class="input">
                         <label>Year</label>
-                        <input class="textbox" id="bookYear" type="number" required><br>
+                        <input class="textbox" id="bookYear" type="number" required data-testid="bookFormYearInput"><br>
                     </div>
                     <div class="input-check">
                         <label>Finished Reading</label>
-                        <input class="textbox" id="bookIsComplete" type="checkbox">
+                        <input class="textbox" id="bookIsComplete" type="checkbox" data-testid="bookFormIsCompleteCheckbox">
                     </div><br>
-                    <button id="submit" value="submit" name="submit" type="submit"><i class="fa-solid fa-book"></i> Put
+                    <button id="submit" value="submit" name="submit" type="submit"><i class="fa-solid fa-book" data-testid="bookFormSubmitButton"></i> Put
                         Book</button><br>
                 </form>
             </section>
 
             <section class="search">
                 <h2>Search Book</h2>
-                <form id="searchBook">
+                <form id="searchBook" data-testid="searchBookForm">
                     <div>
                         <label>Title</label><br>
-                        <input class="textbox" id="searchBookTitle" type="text"><br>
-                        <button id="searchSubmit" type="submit"><i class="fa-solid fa-magnifying-glass"></i>
+                        <input class="textbox" id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput"><br>
+                        <button id="searchSubmit" type="submit"><i class="fa-solid fa-magnifying-glass" data-testid="searchBookFormSubmitButton"></i>
                             Search</button>
                     </div>
                 </form>
@@ -68,13 +68,13 @@
         <div class="book">
             <section id="before" class="book-box">
                 <h2>Not Finished Reading</h2>
-                <div id="uncompletedRead" class="list-book">
+                <div id="uncompletedRead" class="list-book" data-testid="incompleteBookList">
                     <!-- books content -->
                 </div>
             </section>
             <section id="after" class="book-box">
                 <h2>Finished Reading</h2>
-                <div id="completedRead" class="list-book">
+                <div id="completedRead" class="list-book" data-testid="completeBookList">
                     <!-- books content  -->
                 </div>
             </section>
